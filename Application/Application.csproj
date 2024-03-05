@@ -11,13 +11,13 @@
     <Folder Include="Features\Brands\Commands\Update\" />
     <Folder Include="Features\Brands\Constants\" />
     <Folder Include="Features\Brands\Rules\" />
-    <Folder Include="Features\Brands\Profiles\" />
     <Folder Include="Features\Brands\Queries\" />
     <Folder Include="Features\Models\Commands\" />
     <Folder Include="Features\Models\Queries\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
