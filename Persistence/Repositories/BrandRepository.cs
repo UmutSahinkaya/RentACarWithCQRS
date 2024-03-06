@@ -8,12 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Persistence.Repositories
+namespace Persistence.Repositories;
+
+public class BrandRepository : EfRepositoryBase<Brand, Guid, BaseDbContext>, IBrandRepository
 {
-    public class BrandRepository : EfRepositoryBase<Brand, Guid, BaseDbContext>, IBrandRepository
+    public BrandRepository(BaseDbContext context) : base(context)
     {
-        public BrandRepository(BaseDbContext context) : base(context)
-        {
-        }
     }
 }

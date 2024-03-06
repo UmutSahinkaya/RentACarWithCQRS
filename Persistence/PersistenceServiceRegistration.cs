@@ -9,13 +9,18 @@ namespace Persistence
 {
     public static class PersistenceServiceRegistration
     {
-        public static IServiceCollection AddPersitenceServices(this IServiceCollection services,IConfiguration configuration)
+        public static IServiceCollection AddPersitenceServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<BaseDbContext>(options =>
-            {
-                options.UseInMemoryDatabase("nArchitecture");
-            });
+            //services.AddDbContext<BaseDbContext>(options =>{options.UseInMemoryDatabase("nArchitecture");});
+
+            services.AddDbContext<BaseDbContext>(options => { options.UseSqlServer(configuration.GetConnectionString("MyCon")); });
+
             services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped<ICarRepository, CarRepository>();
+            services.AddScoped<IFuelRepository, FuelRepository>();
+            services.AddScoped<IModelRepository, ModelRepository>();
+            services.AddScoped<ITransmissionRepository, TransmissionRepository>();
+
             return services;
         }
     }
