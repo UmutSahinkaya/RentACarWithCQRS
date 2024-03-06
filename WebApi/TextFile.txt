@@ -1,0 +1,22 @@
+﻿Dynamic Query Json for Model;
+{
+  "sort": [
+    {
+      "field": "name",
+      "dir": "asc"
+    }
+  ],
+  "filter": {
+    "field": "name",
+    "value": "420D",
+    "operator": "eq",
+    "logic": "and",
+    "filters":[
+     {
+      "field":"Fuel.Name",
+      "operator":"contains",
+      "value":"iz"
+     }
+   ]
+  }
+}
