@@ -17,7 +17,7 @@ public class GetListBrandQuery : IRequest<GetListResponse<GetListBrandListItemDt
 
     public bool BypassCache { get; }
 
-    public string? CacheGroupKey { get; }
+    public string? CacheGroupKey => "GetBrands";
 
     public TimeSpan? SlidingExpiration { get; }
 

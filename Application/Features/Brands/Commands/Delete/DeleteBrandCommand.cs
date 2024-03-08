@@ -1,5 +1,6 @@
 ﻿using Application.Services.Repositories;
 using AutoMapper;
+using Core.Application.Pipelines.Caching;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -14,7 +15,7 @@ public class DeleteBrandCommand:IRequest<DeletedBrandResponse>
 {
     public Guid Id { get; set; }
 
-    public class DeleteBrandCommandHandler : IRequestHandler<DeleteBrandCommand, DeletedBrandResponse>
+    public class DeleteBrandCommandHandler : IRequestHandler<DeleteBrandCommand, DeletedBrandResponse>, ICacheRemoverRequest
     {
         private readonly IBrandRepository _brandrepository;
         private readonly IMapper _mapper;
@@ -24,6 +25,12 @@ public class DeleteBrandCommand:IRequest<DeletedBrandResponse>
             _brandrepository = brandrepository;
             _mapper = mapper;
         }
+
+        public string? CacheKey => "";
+
+        public bool BypassCache => false;
+
+        public string? CacheGroupKey => "GetBrands";
 
         public async Task<DeletedBrandResponse> Handle(DeleteBrandCommand request, CancellationToken cancellationToken)
         {
