@@ -22,3 +22,4 @@
 }
 
 // Redis i kullanmak için docker container üzerinden kullanmak istiyorsan bu komutu yaz : "docker run --name my-redis -p 6379:6379 -d redis"
+//Ayrıca projeyi çalıştıracağımızda çalışmazsa Redis için container ı ayağa kaldırmamız gerekiyor 

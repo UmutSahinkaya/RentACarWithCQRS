@@ -1,6 +1,7 @@
 ﻿using Application.Services.Repositories;
 using AutoMapper;
 using Core.Application.Pipelines.Caching;
+using Core.Application.Pipelines.Logging;
 using Domain.Entities;
 using MediatR;
 using System;
@@ -15,7 +16,7 @@ public class DeleteBrandCommand:IRequest<DeletedBrandResponse>
 {
     public Guid Id { get; set; }
 
-    public class DeleteBrandCommandHandler : IRequestHandler<DeleteBrandCommand, DeletedBrandResponse>, ICacheRemoverRequest
+    public class DeleteBrandCommandHandler : IRequestHandler<DeleteBrandCommand, DeletedBrandResponse>, ICacheRemoverRequest, ILoggableRequest
     {
         private readonly IBrandRepository _brandrepository;
         private readonly IMapper _mapper;
