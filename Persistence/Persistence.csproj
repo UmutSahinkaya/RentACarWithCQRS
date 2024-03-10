@@ -22,6 +22,9 @@
     <Reference Include="Core.Persistence">
       <HintPath>..\..\Core.Packages\Core.Persistence\bin\Debug\net8.0\Core.Persistence.dll</HintPath>
     </Reference>
+    <Reference Include="Core.Security">
+      <HintPath>..\..\Core.Packages\Core.Application\bin\Debug\net8.0\Core.Security.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
